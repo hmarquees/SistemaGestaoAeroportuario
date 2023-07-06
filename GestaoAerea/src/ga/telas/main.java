@@ -730,62 +730,62 @@ public class main extends JFrame {
 		MaskFormatter mascaraHora = new MaskFormatter("##:##");
 		
 		JLabel lbl_Cod = new JLabel("Código");
-		lbl_Cod.setBounds(20, 21, 45, 16);
+		lbl_Cod.setBounds(20, 30, 45, 16);
 		Painel_Voo_Cadastro.add(lbl_Cod);
 		
 		JLabel lbl_Companhia = new JLabel("CNPJ Companhia Aérea");
-		lbl_Companhia.setBounds(230, 21, 152, 16);
+		lbl_Companhia.setBounds(230, 30, 152, 16);
 		Painel_Voo_Cadastro.add(lbl_Companhia);
 		
 		JLabel lbl_AeroOrigem = new JLabel("Código do Aeroporto de Origem");
-		lbl_AeroOrigem.setBounds(20, 54, 209, 16);
+		lbl_AeroOrigem.setBounds(20, 66, 209, 16);
 		Painel_Voo_Cadastro.add(lbl_AeroOrigem);
 		
 		JLabel lbl_AeroDestino = new JLabel("Código do Aeroporto de Destino");
-		lbl_AeroDestino.setBounds(322, 54, 204, 16);
+		lbl_AeroDestino.setBounds(372, 66, 204, 16);
 		Painel_Voo_Cadastro.add(lbl_AeroDestino);
 		
 		JLabel lbl_Data = new JLabel("Data");
-		lbl_Data.setBounds(20, 88, 45, 16);
+		lbl_Data.setBounds(20, 102, 45, 16);
 		Painel_Voo_Cadastro.add(lbl_Data);
 		
 		JLabel lbl_Horario = new JLabel("Horário");
-		lbl_Horario.setBounds(193, 88, 52, 16);
+		lbl_Horario.setBounds(208, 102, 52, 16);
 		Painel_Voo_Cadastro.add(lbl_Horario);
 		
 		JLabel lbl_CodAviao = new JLabel("Código do Avião");
-		lbl_CodAviao.setBounds(365, 88, 112, 16);
+		lbl_CodAviao.setBounds(372, 102, 112, 16);
 		Painel_Voo_Cadastro.add(lbl_CodAviao);
 		
 		JTextField tf_Cod = new JTextField();
-		tf_Cod.setBounds(72, 16, 146, 26);
+		tf_Cod.setBounds(72, 25, 146, 26);
 		Painel_Voo_Cadastro.add(tf_Cod);
 		tf_Cod.setColumns(10);
 		
 		JFormattedTextField ftf_Companhia = new JFormattedTextField(mascaraCNPJ);
-		ftf_Companhia.setBounds(394, 16, 228, 26);
+		ftf_Companhia.setBounds(394, 25, 306, 26);
 		Painel_Voo_Cadastro.add(ftf_Companhia);
 		
 		JTextField tf_AeroOrigem = new JTextField();
-		tf_AeroOrigem.setBounds(228, 49, 87, 26);
+		tf_AeroOrigem.setBounds(228, 61, 132, 26);
 		Painel_Voo_Cadastro.add(tf_AeroOrigem);
 		tf_AeroOrigem.setColumns(10);
 		
 		JTextField tf_AeroDestino = new JTextField();
-		tf_AeroDestino.setBounds(532, 49, 90, 26);
+		tf_AeroDestino.setBounds(588, 61, 112, 26);
 		Painel_Voo_Cadastro.add(tf_AeroDestino);
 		tf_AeroDestino.setColumns(10);
 		
 		JFormattedTextField ftf_Data = new JFormattedTextField(mascaraData);
-		ftf_Data.setBounds(56, 83, 125, 26);
+		ftf_Data.setBounds(56, 97, 125, 26);
 		Painel_Voo_Cadastro.add(ftf_Data);
 		
 		JFormattedTextField ftf_Horario = new JFormattedTextField(mascaraHora);
-		ftf_Horario.setBounds(255, 83, 87, 26);
+		ftf_Horario.setBounds(272, 97, 87, 26);
 		Painel_Voo_Cadastro.add(ftf_Horario);
 		
 		JTextField tf_CodAviao = new JTextField();
-		tf_CodAviao.setBounds(478, 83, 146, 26);
+		tf_CodAviao.setBounds(496, 97, 204, 26);
 		Painel_Voo_Cadastro.add(tf_CodAviao);
 		tf_CodAviao.setColumns(10);
 		
@@ -814,7 +814,7 @@ public class main extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btn_Atualizar.setBounds(140, 350, 120, 30);
+		btn_Atualizar.setBounds(160, 350, 120, 30);
 		Painel_Voo_Cadastro.add(btn_Atualizar);
 		
 		JButton btn_Excluir = new JButton("Excluir");
@@ -854,7 +854,7 @@ public class main extends JFrame {
 				        String companhia = rs.getString("companhia");
 				        String aeroorigem = rs.getString("aeroporto_origem");
 				        String aerodestino = rs.getString("aeroporto_destino");
-				        String data = rs.getString("dada");
+				        String data = rs.getString("data");
 				        String horario = rs.getString("horario");
 				        String codaviao = rs.getString("cod_aviao");
 				       				        
@@ -907,17 +907,19 @@ public class main extends JFrame {
 		model.addColumn("Destino");													// adiciona a coluna 2
 		model.addColumn("Companhia");												// adiciona a coluna 3
 		model.addColumn("Horario");
-		table_voos.getColumnModel().getColumn(0).setPreferredWidth(50);				// define a largura da coluna 0
-		table_voos.getColumnModel().getColumn(1).setPreferredWidth(200);			// define a largura da coluna 1
-		table_voos.getColumnModel().getColumn(2).setPreferredWidth(200);			// define a largura da coluna 2
+		model.addColumn("Aeronave");
+		table_voos.getColumnModel().getColumn(0).setPreferredWidth(80);				// define a largura da coluna 0
+		table_voos.getColumnModel().getColumn(1).setPreferredWidth(180);			// define a largura da coluna 1
+		table_voos.getColumnModel().getColumn(2).setPreferredWidth(180);			// define a largura da coluna 2
 		table_voos.getColumnModel().getColumn(3).setPreferredWidth(150);			// define a largura da coluna 3
-		table_voos.getColumnModel().getColumn(4).setPreferredWidth(50);
+		table_voos.getColumnModel().getColumn(4).setPreferredWidth(80);
+		table_voos.getColumnModel().getColumn(5).setPreferredWidth(100);
 		
 		JScrollPane scrollPane = new JScrollPane(table_voos);						// cria o ScrollPane e adiciona o JTable
-		scrollPane.setPreferredSize(new Dimension(650, 251));						// define a largura e altura do ScrollPane
+		scrollPane.setPreferredSize(new Dimension(730, 430));						// define a largura e altura do ScrollPane
 		JViewport viewport = scrollPane.getViewport();								// define a cor de fundo do ScrollPane
 		viewport.setBackground(new Color(238,238,238));								// define a cor de fundo do ScrollPane
-		Painel_Consulta_Aviao.add(scrollPane);										// adiciona o ScrollPane ao JPanel
+		Painel_Consulta_Voo.add(scrollPane);										// adiciona o ScrollPane ao JPanel
 		
 		
 		try {
@@ -930,16 +932,23 @@ public class main extends JFrame {
 		    
 		    // Procedimentos para obter os dados de uma tabela
             java.sql.Statement stmt = conn.createStatement();
-            String query = "SELECT voo.cod, aeroporto.cod, aeroporto.cod, companhia.nome, voo.horario FROM aviao";
+            String query = "SELECT v.cod AS codigo_voo, a1.cidade AS cidade_origem, a1.estado AS estado_origem, a2.cidade AS cidade_destino, a2.estado AS estado_destino, c.nome_fantasia AS nome_companhia, v.horario AS horario_voo, av.modelo AS modelo_aviao "
+            		+ "FROM voo v "
+            		+ "INNER JOIN aeroporto a1 ON v.aeroporto_origem = a1.cod "
+            		+ "INNER JOIN aeroporto a2 ON v.aeroporto_destino = a2.cod "
+            		+ "INNER JOIN companhia c ON v.companhia = c.cnpj "
+            		+ "INNER JOIN aviao av ON v.cod_aviao = av.cod ";
             ResultSet rs = stmt.executeQuery(query);
 
 		    while (rs.next()) {
-		        int cod = rs.getInt("cod");
-		        String fabricante = rs.getString("fabricante");
-		        String modelo = rs.getString("modelo");
-		        int capacidade = rs.getInt("capacidade");
+		        int cod = rs.getInt("codigo_voo");
+		        String origem = rs.getString("cidade_origem") + " - " + rs.getString("estado_origem");
+		        String destino = rs.getString("cidade_destino") + " - " + rs.getString("estado_destino");
+		        String companhia = rs.getString("nome_companhia");
+		        String horario = rs.getString("horario_voo");
+		        String aviao = rs.getString("modelo_aviao");
 
-		        model.addRow(new Object[]{cod, fabricante, modelo, capacidade});
+		        model.addRow(new Object[]{cod, origem, destino, companhia, horario, aviao});
 		    }
 
 		    // Fim do procedimento para obter os dados
@@ -1247,7 +1256,6 @@ public class main extends JFrame {
 		public void limparpainel() {
 	
 	        layeredPane.removeAll();
-	        //layeredPane.add(p);
 	        layeredPane.repaint();
 	        layeredPane.revalidate();
 	    }
