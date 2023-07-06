@@ -66,6 +66,7 @@ public class main extends JFrame {
 					main frame = new main();
 					frame.setVisible(true);
 					frame.setTitle("Sistema de Gestão Aeroportuária");
+					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -85,15 +86,6 @@ public class main extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		/*
-		JLabel lbl_Titulo = new JLabel("SISTEMA DE GESTÃO AEROPORTUÁRIA");
-		lbl_Titulo.setForeground(new Color(0, 0, 0));
-		lbl_Titulo.setFont(new Font("Lucida Grande", Font.BOLD, 24));
-		lbl_Titulo.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_Titulo.setBounds(6, 6, 721, 47);
-		contentPane.add(lbl_Titulo);
-		*/
 		
 		layeredPane = new JLayeredPane();
 		layeredPane.setBounds(0, 30, 730, 430);
