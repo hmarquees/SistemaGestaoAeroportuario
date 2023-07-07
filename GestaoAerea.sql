@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `gestaoaerea`.`cliente` (
   `cpf` CHAR(11) NOT NULL,
   `nome` VARCHAR(20) NOT NULL,
   `sobrenome` VARCHAR(40) NOT NULL,
-  `telefone` CHAR(11) NOT NULL,
+  `telefone` CHAR(15) NOT NULL,
   `data_nascimento` DATE NOT NULL,
   PRIMARY KEY (`cpf`))
 ENGINE = InnoDB
