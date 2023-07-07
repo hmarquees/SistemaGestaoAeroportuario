@@ -60,6 +60,7 @@ CREATE TABLE IF NOT EXISTS `gestaoaerea`.`cliente` (
   `telefone` CHAR(15) NOT NULL,
   `data_nascimento` DATE NOT NULL,
   `sexo` char(1) NOT NULL,
+  `deficiencia` boolean NOT NULL,
   PRIMARY KEY (`cpf`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
