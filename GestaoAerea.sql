@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `gestaoaerea`.`endereco` (
   `bairro` VARCHAR(30) NOT NULL,
   `cidade` VARCHAR(30) NOT NULL,
   `estado` CHAR(2) NOT NULL,
-  `cep` CHAR(8) NOT NULL,
+  `cep` CHAR(10) NOT NULL,
   `cpf_cliente` CHAR(11) NOT NULL,
   PRIMARY KEY (`cod_end`),
   INDEX `endereco_cliente` (`cpf_cliente` ASC) VISIBLE,
