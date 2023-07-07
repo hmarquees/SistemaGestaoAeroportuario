@@ -53,7 +53,7 @@ DEFAULT CHARACTER SET = utf8mb4;
 -- Table `gestaoaerea`.`cliente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `gestaoaerea`.`cliente` (
-  `cpf` CHAR(11) NOT NULL,
+  `cpf` CHAR(14) NOT NULL,
   `nome` VARCHAR(20) NOT NULL,
   `sobrenome` VARCHAR(40) NOT NULL,
   `email` VARCHAR(80) NOT NULL,
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `gestaoaerea`.`endereco` (
   `cidade` VARCHAR(30) NOT NULL,
   `estado` CHAR(2) NOT NULL,
   `cep` CHAR(10) NOT NULL,
-  `cpf_cliente` CHAR(11) NOT NULL,
+  `cpf_cliente` CHAR(14) NOT NULL,
   PRIMARY KEY (`cod_end`),
   INDEX `endereco_cliente` (`cpf_cliente` ASC) VISIBLE,
   CONSTRAINT `endereco_cliente`
